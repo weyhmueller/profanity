@@ -213,10 +213,10 @@ AS_IF([test "x$enable_icons_and_clipboard" != xno],
                                   [AC_MSG_NOTICE([gtk+-3.0/gtk+2.0 not found, icons and clipboard not enabled])])])])])
 
 AS_IF([test "x$PLATFORM" = xosx],
-    [AC_CHECK_FILE([/usr/local/opt/readline/lib],
+    [AC_CHECK_FILE([/opt/homebrew/opt/readline/lib],
         [LIBS="-lreadline $LIBS"
-            AM_CPPFLAGS="-I/usr/local/opt/readline/include $AM_CPPFLAGS"
-            AM_LDFLAGS="-L/usr/local/opt/readline/lib $AM_LDFLAGS"
+            AM_CPPFLAGS="-I/opt/homebrew/opt/readline/include $AM_CPPFLAGS"
+            AM_LDFLAGS="-L/opt/homebrew/opt/readline/lib $AM_LDFLAGS"
             AC_SUBST(AM_LDFLAGS)],
         [AC_MSG_ERROR([libreadline is required for profanity])])],
 
